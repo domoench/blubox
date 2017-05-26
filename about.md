@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-La la la la
+Another blog about building a tiny house.

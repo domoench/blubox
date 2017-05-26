@@ -1,19 +1,20 @@
 // Blue theme
 
 // Color variables
-$blue: #009DDB;
 $blue-small: #007AB3;
 $gray: #45474A;
 $white: #fff;
-$orange-claw: #e4651e;
+$blue: #4e99ff;
+$orange-claw: #e43200;
+$brackish-blue: #354562;
 
 // Config
-$color-background: $gray !default;
+$color-background: $brackish-blue !default;
 $color-dot-accent: $blue !default;
 $color-foreground: $orange-claw !default;
 $color-title: $blue !default;
 $color-body-text: $gray !default;
-$color-text-accent: $blue !default;
+$color-text-accent: $brackish-blue !default;
 $color-code: $blue-small !default;
 $color-nav-link: $blue !default;
 $color-primary-link: $blue !default;
