@@ -13,3 +13,5 @@ I'm building a SIP tiny house.
 It will go here:
 
 ![worksite](http://farm5.staticflickr.com/4274/34069241804_c6c40c19fc_h.jpg)
+
+{% include tailer-model.html %}

@@ -1,0 +1,10 @@
+{% include setup-threejs.html %}
+
+<script>
+
+var model_path = '{{ "/assets/models/8x18_sip_v9_SIPs.dae" | prepend: full_base_url }}';
+
+bbx.init(model_path);
+bbx.animate();
+
+</script>
