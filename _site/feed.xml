@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-07T10:32:02-04:00</updated><id>http://localhost:4000/</id><title type="html">blubox</title><subtitle>a tiny house blog. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-07T10:38:17-04:00</updated><id>http://localhost:4000/</id><title type="html">blubox</title><subtitle>a tiny house blog. 
 </subtitle><entry><title type="html">Intro</title><link href="http://localhost:4000/update/2017/06/06/intro.html" rel="alternate" type="text/html" title="Intro" /><published>2017-06-06T12:00:00-04:00</published><updated>2017-06-06T12:00:00-04:00</updated><id>http://localhost:4000/update/2017/06/06/intro</id><content type="html" xml:base="http://localhost:4000/update/2017/06/06/intro.html">&lt;p&gt;I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -9,19 +9,6 @@
 
 &lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4274/34069241804_c6c40c19fc_h.jpg&quot; alt=&quot;The build site&quot; /&gt;
 &lt;em&gt;The build site: the overgrown section of my parents’ backyard&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;There’s also some raw opportunistic convenience to it. My saintly parents have offered their backyard, basement wood shop, and dad’s encyclopedic knowledge of power tools and sustainable building practices. In return, I’m washing more dishes than I did when I was a kid.&lt;/p&gt;
-
-&lt;p&gt;My end goal is to hone my construction skills, and in the process produce a tiny house that is well-built and beautiful. Quality, energy-efficiency, and simplicity over cuteness. I do think it will turn out cute though.&lt;/p&gt;
-
-&lt;p&gt;My end goal is not to live in a tiny house. Writing that makes me feel like a bit of a fraud, but I’m not ready to leave NYC - and living in a tiny house there just ain’t happening. My hope is, by doing good work and transparently documenting the design and construction of the house, I’ll convince someone to buy it. We’ll see how that goes…&lt;/p&gt;
-
-&lt;p&gt;Now I’m at the point of no return. Most of the high-level research, design, and planning is done. I even have my trailer. It’s time to pull the trigger and order my SIP panels (more on those later) and other expensive raw materials and begin the build.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4223/34871652736_26a05c8e47_h.jpg&quot; alt=&quot;Brand new trailer&quot; /&gt;
-&lt;em&gt;The brand new trailer&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Honestly, I’m quite intimidated and have often thought it would be wise to forget the whole thing. But, I’ve already put up this blog post so I guess I’ll just keep going!&lt;/p&gt;
 
 &lt;!-- TODO: Currently this can only be included once per post --&gt;
 &lt;div class=&quot;videoWrapper&quot;&gt;
@@ -58,4 +45,19 @@
         player.setPlaybackQuality('hd720');
     }
 
-&lt;/script&gt;</content><author><name></name></author><summary type="html">I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.</summary></entry></feed>
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Clearing the build site and chipping the wood to stop weed growth&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s also some raw opportunistic convenience to it. My saintly parents have offered their backyard, basement wood shop, and dad’s encyclopedic knowledge of power tools and sustainable building practices. In return, I’m washing more dishes than I did when I was a kid.&lt;/p&gt;
+
+&lt;p&gt;My end goal is to hone my construction skills, and in the process produce a tiny house that is well-built and beautiful. Quality, energy-efficiency, and simplicity over cuteness. I do think it will turn out cute though.&lt;/p&gt;
+
+&lt;p&gt;My end goal is not to live in a tiny house. Writing that makes me feel like a bit of a fraud, but I’m not ready to leave NYC - and living in a tiny house there just ain’t happening. My hope is, by doing good work and transparently documenting the design and construction of the house, I’ll convince someone to buy it. We’ll see how that goes…&lt;/p&gt;
+
+&lt;p&gt;Now I’m at the point of no return. Most of the high-level research, design, and planning is done. I even have my trailer. It’s time to pull the trigger and order my SIP panels (more on those later) and other expensive raw materials and begin the build.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4223/34871652736_26a05c8e47_h.jpg&quot; alt=&quot;Brand new trailer&quot; /&gt;
+&lt;em&gt;The brand new trailer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Honestly, I’m quite intimidated and have often thought it would be wise to forget the whole thing. But, I’ve already put up this blog post so I guess I’ll just keep going!&lt;/p&gt;</content><author><name></name></author><summary type="html">I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.</summary></entry></feed>
