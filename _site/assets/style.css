@@ -80,6 +80,25 @@ code {
   font-size: 16px;
   padding: 1px 4px; }
 
+.post-content a, .page-content a {
+  color: #4e99ff; }
+.post-content em, .page-content em {
+  opacity: 0.5;
+  font-size: 14px; }
+
+.footer li {
+  display: inline;
+  padding-left: 5px; }
+.footer .svg-path {
+  fill: red; }
+
+.description {
+  color: #fff; }
+
+svg:hover {
+  opacity: 0.5;
+  fill: #4e99ff; }
+
 .prose p, .prose ol, .prose ul {
   font-size: 20px;
   margin-bottom: 1em;
@@ -98,6 +117,18 @@ code {
   @media (min-width: 52em) {
     .prose img {
       max-width: 120%; } }
+.prose .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+.prose .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 .prose blockquote {
   line-height: 1.375;
   padding-left: 20px;

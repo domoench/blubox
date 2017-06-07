@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Intro"
+date:   2017-06-06 12:00:00 -0400
+categories: update
+---
+
+I'm building a tiny house on an 18-foot trailer at my parent's place in Baltimore.
+
+<!--more-->
+
+I’m an NYC-based software engineer with limited experience building things. I’ve decided to take a break from computers and start this ridiculous project for a few reasons. The main one is a desire to get some serious construction chops. I’ve always admired my dad’s skills in that department, from changing door knobs to building a solar hot-water system, and I want to learn those skills too. I learn best through projects, and this is the hugest self-contained project I could come up with. So it makes sense. Right?
+ 
+Spending time with my family is another motivation. I haven’t lived close to my parents or my sister’s family for some time, and don’t know when I’ll get the chance again, so these next months will be a really special chance to keep our lives connected.
+
+![The build site](https://farm5.staticflickr.com/4274/34069241804_c6c40c19fc_h.jpg)
+*The build site: the overgrown section of my parents' backyard*
+
+ 
+There’s also some raw opportunistic convenience to it. My saintly parents have offered their backyard, basement wood shop, and dad’s encyclopedic knowledge of power tools and sustainable building practices. In return, I’m washing more dishes than I did when I was a kid.
+ 
+My end goal is to hone my construction skills, and in the process produce a tiny house that is well-built and beautiful. Quality, energy-efficiency, and simplicity over cuteness. I do think it will turn out cute though.
+ 
+My end goal is not to live in a tiny house. Writing that makes me feel like a bit of a fraud, but I’m not ready to leave NYC - and living in a tiny house there just ain’t happening. My hope is, by doing good work and transparently documenting the design and construction of the house, I’ll convince someone to buy it. We’ll see how that goes...
+ 
+Now I’m at the point of no return. Most of the high-level research, design, and planning is done. I even have my trailer. It’s time to pull the trigger and order my SIP panels (more on those later) and other expensive raw materials and begin the build.
+
+![Brand new trailer](https://farm5.staticflickr.com/4223/34871652736_26a05c8e47_h.jpg)
+*The brand new trailer*
+ 
+Honestly, I’m quite intimidated and have often thought it would be wise to forget the whole thing. But, I’ve already put up this blog post so I guess I’ll just keep going!
+
+{% include youtube-embed.html vid-id="1pMq_NWXvf0" %}
