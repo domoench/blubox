@@ -31,3 +31,5 @@ Now I’m at the point of no return. Most of the high-level research, design, an
 *The brand new trailer*
  
 Honestly, I’m quite intimidated and have often thought it would be wise to forget the whole thing. But, I’ve already put up this blog post so I guess I’ll just keep going!
+
+{% include 3d-model.html scale="0.025" shadows="false" model_path="/assets/models/SIP_shell_v10.3.dae" %}

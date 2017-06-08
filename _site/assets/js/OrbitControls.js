@@ -69,8 +69,8 @@ THREE.OrbitControls = function ( object, domElement ) {
 	// Set to false to disable use of the keys
 	this.enableKeys = true;
 
-	// The four arrow keys
-	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
+	// The four arrow keys. Added zooming via the bracket keys
+	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40, ZOOMIN: 219, ZOOMOUT: 221};
 
 	// Mouse buttons
 	this.mouseButtons = { ORBIT: THREE.MOUSE.LEFT, ZOOM: THREE.MOUSE.MIDDLE, PAN: THREE.MOUSE.RIGHT };
@@ -547,6 +547,15 @@ THREE.OrbitControls = function ( object, domElement ) {
 				scope.update();
 				break;
 
+			case scope.keys.ZOOMIN:
+			    dollyIn( getZoomScale() );
+				scope.update();
+				break;
+
+			case scope.keys.ZOOMOUT:
+			    dollyOut( getZoomScale() );
+				scope.update();
+				break;
 		}
 
 	}
@@ -897,7 +906,9 @@ THREE.OrbitControls = function ( object, domElement ) {
 	scope.domElement.addEventListener( 'contextmenu', onContextMenu, false );
 
 	scope.domElement.addEventListener( 'mousedown', onMouseDown, false );
-	scope.domElement.addEventListener( 'wheel', onMouseWheel, false );
+
+    // Mouse wheel zooming is annoying when embedding in an article.
+	// scope.domElement.addEventListener( 'wheel', onMouseWheel, false );
 
 	scope.domElement.addEventListener( 'touchstart', onTouchStart, false );
 	scope.domElement.addEventListener( 'touchend', onTouchEnd, false );
