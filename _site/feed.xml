@@ -1,5 +1,333 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://blubox.house/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blubox.house/" rel="alternate" type="text/html" /><updated>2017-06-08T11:53:23-04:00</updated><id>http://blubox.house/</id><title type="html">blubox</title><subtitle>a tiny house blog. 
-</subtitle><entry><title type="html">Intro</title><link href="http://blubox.house/update/2017/06/06/intro.html" rel="alternate" type="text/html" title="Intro" /><published>2017-06-06T12:00:00-04:00</published><updated>2017-06-06T12:00:00-04:00</updated><id>http://blubox.house/update/2017/06/06/intro</id><content type="html" xml:base="http://blubox.house/update/2017/06/06/intro.html">&lt;p&gt;I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://blubox.house/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blubox.house/" rel="alternate" type="text/html" /><updated>2017-07-11T19:59:07-04:00</updated><id>http://blubox.house/</id><title type="html">blubox</title><subtitle>a tiny house blog. 
+</subtitle><entry><title type="html">SIP Framing</title><link href="http://blubox.house/update/2017/07/07/sips.html" rel="alternate" type="text/html" title="SIP Framing" /><published>2017-07-07T12:00:00-04:00</published><updated>2017-07-07T12:00:00-04:00</updated><id>http://blubox.house/update/2017/07/07/sips</id><content type="html" xml:base="http://blubox.house/update/2017/07/07/sips.html">&lt;p&gt;I’ll be using &lt;a href=&quot;http://www.sips.org/about/frequently-asked-questions-faqs-regarding-structural-insulated-panels-sips&quot;&gt;Structural Insulated Panels (SIPs)&lt;/a&gt; rather than traditional 2x4 framing.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;SIPs are made of a foam core sandwiched between two thin skins of oriented strand board (OSB). This design (a torsion box) makes them strong and great insulators.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.powerwallgroup.com/PWR5/wp-content/uploads/2016/01/sips1.jpg&quot; alt=&quot;SIP panel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s an interactive model of how my SIP shell will look:&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/three.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/ColladaLoader.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/Detector.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/OrbitControls.js&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+var bbx = {};
+
+bbx.init = function(params) {
+    // DOM
+    bbx.container = document.getElementById( 'container' );
+    bbx.w = bbx.container.clientWidth;
+    bbx.h = bbx.w * 0.75;
+
+    // Validate configuration parameters 
+    params.shadows = params.shadows || false;
+    params.scale = params.scale || 0.025;
+    params.model_path = params.model_path || 'bad model path!';
+
+    // SCENE, RENDERER, CAMERA, CONTROLS, LISTENERS
+    bbx.scene = new THREE.Scene();
+
+    bbx.renderer = new THREE.WebGLRenderer();
+    bbx.renderer.setPixelRatio( window.devicePixelRatio );
+    bbx.renderer.setSize( bbx.w, bbx.h );
+    bbx.container.appendChild( bbx.renderer.domElement );
+
+    if (params.shadows) {
+        bbx.renderer.shadowMap.enabled = true;
+        bbx.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    }
+
+    bbx.camera = new THREE.PerspectiveCamera( 75, bbx.w / bbx.h, 1, 10000 );
+    bbx.camera.position.z = 10;
+    bbx.camera.position.y = 10;
+
+    controls = new THREE.OrbitControls( bbx.camera, bbx.renderer.domElement );
+    window.addEventListener( 'resize', bbx.onWindowResize, false );
+
+    // MODEL
+    // Load it from a collada file
+    var loader = new THREE.ColladaLoader();
+    loader.options.convertUpAxis = true;
+    loader.load(params.model_path, function (collada) {
+        bbx.model = collada.scene;
+        bbx.model.scale.set( params.scale, params.scale, params.scale );
+        bbx.model.position.set( 0, -3, 0 );
+
+        // Shadows require turning on shadows for all child meshes in the group
+        bbx.model.traverse(function ( child ) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+        });
+
+        bbx.scene.add( bbx.model );
+    });
+
+    var gridHelper = new THREE.GridHelper( 10, 10 );
+    gridHelper.position.set( 0, -3, 0 );
+    bbx.scene.add( gridHelper );
+
+    // LIGHTS
+    // Point light seems to have the nicest shadows
+    var pLight = new THREE.PointLight( 0xFFB578, 0.7, 30 );
+    pLight.position.set(10, 10, 5);
+    if (params.shadows) {
+        pLight.castShadow = true;
+        // Getting rid of nasty shadow aliasing requires a higher res shadow map, and bias
+        pLight.shadow.mapSize.x = 1024;
+        pLight.shadow.mapSize.y = 1024;
+        pLight.shadow.bias = 0.3;
+    }
+    bbx.scene.add( pLight );
+    // var pLHelper = new THREE.PointLightHelper( pLight, 1 );
+    // bbx.scene.add( pLHelper );
+
+    var dLight = new THREE.DirectionalLight( 0xBBD8F7, 0.9 ); // bluish
+    dLight.position.set( -10, 10, 4 )
+    bbx.scene.add( dLight );
+    // var dLHelper = new THREE.DirectionalLightHelper( dLight, 5 );
+    // bbx.scene.add( dLHelper );
+    
+    var aLight = new THREE.AmbientLight( 0x606060 ); // soft white light
+    bbx.scene.add( aLight );
+}
+
+bbx.animate = function() {
+    requestAnimationFrame( bbx.animate );
+    if (bbx.model) {
+        bbx.model.rotation.y += 0.001;
+    }
+    bbx.renderer.render( bbx.scene, bbx.camera );
+}
+
+bbx.onWindowResize = function() {
+    bbx.container = document.getElementById( 'container' );
+    bbx.w = bbx.container.clientWidth;
+    bbx.h = bbx.w * 0.75;
+    bbx.camera.aspect = bbx.w / bbx.h;
+    bbx.camera.updateProjectionMatrix();
+    bbx.renderer.setSize( bbx.w, bbx.h );
+}
+
+this.bbx = bbx;
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+var params = {
+    shadows: 'false' == 'true',
+    scale: parseFloat('0.047'),
+    model_path: '/assets/models/SIP_shell_v10.5.dae',
+}
+
+console.log('params', params)
+
+bbx.init(params);
+bbx.animate();
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;CONTROLS: mouse drag to orbit. ] and [ keys to zoom in and out.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-benefits-of-sips&quot;&gt;The benefits of SIPs&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Construction speed&lt;/strong&gt;: You can design a building in CAD (e.g. Sketchup), send the designs to a SIP supplier who will cut them perfectly 
+on CNC machines and deliver them to your doorstep. Then you assemble the panels like a giant lego set. 
+I’m expecting my panel assembly to take 1 day (good luck to me…). Alternatively, going the traditional 2x4 framing route entails 
+a lot more labor (framing, sheathing, insulating, vapor sealing, etc.) to get to the same point. 
+Since the whole reason for this project is to practice design and construction, I was initially opposed to SIPs: it seemed like a shortcut. 
+But I eventually decided that, as a first time builder, I’d better take every shortcut that doesn’t decrease quality, and especially those 
+that increase quality. Anyway, there should be plenty of other stuff for me to do after framing.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Structural strength&lt;/strong&gt;: The torsion box characteristic of SIPs makes structures built with them very strong. 
+Since a tiny house on wheels (THOW) will face vibration and high-speed winds hurtling down the highway, this is a must. 
+I initially planned to bolt the roof panels all the way down to the trailer frame with threaded rods through the walls, 
+but the panel supplier I’m using (&lt;a href=&quot;http://www.panelwrights.com/&quot;&gt;Panelwrights&lt;/a&gt;, which uses &lt;a href=&quot;http://www.insulspan.com/&quot;&gt;Insulspan&lt;/a&gt; panels) 
+informed me that was overkill. They’ve done many THOWs using the standard SIP assembly method and never had issues. 
+Since I continued to press for advice on ways to make the structure more wind resistant, he suggested doubling the number 
+of structural screws fastening the roof to the walls and using additional simpson strapping.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://www.jlconline.com/projects/disaster-resistant-building/defeating-the-wind_o&quot;&gt;Here’s more evidence&lt;/a&gt; of SIP strength in the face of hurricane winds.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Energy efficiency / greenness&lt;/strong&gt;: SIP building envelopes are very energy efficient to heat and cool, which is a plus if you believe in
+anthropogenic climate change. “I don’t!” hisses Charles Koch from the shadows. Well even Charles Koch would agree it’s better not to waste
+money. SIPs save money over time because they are well insulated and airtight.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Insulation&lt;/strong&gt;: The core of a SIP is insulating foam with a high &lt;a href=&quot;https://en.wikipedia.org/wiki/R-value_(insulation)&quot;&gt;R-value&lt;/a&gt;, and since a SIP building requires less low-R-value studs, the &lt;a href=&quot;https://portersips.com/downloads/WholeWallR-ValueStudy.pdf&quot;&gt;whole-wall insulation of the building is higher than a traditional 2x4 framed building&lt;/a&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Airtightness&lt;/strong&gt;: A properly assembled SIP building envelope is very airtight. That’s good because air leaks constitute a significant portion of an average building’s heat loss. I had a hard time tracking down a specific percentage, but I’ve seen the estimate at up to &lt;a href=&quot;http://energyimpactillinois.org/waystosave/seal-air-leaks-around-your-home/?reload=y&quot;&gt;35%&lt;/a&gt; or &lt;a href=&quot;http://www.sips.org/downloads/sips-green-bldg11.pdf&quot;&gt;40%&lt;/a&gt;. Whatever the exact number is, it makes sense to me: all the insulation in the world won’t help if you leave the windows open.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;The SIP industry claims that manufacturing SIPs uses less resources than manufacturing traditional framing materials. This 
+&lt;a href=&quot;http://www.sips.org/downloads/sips-green-bldg11.pdf&quot;&gt;white paper&lt;/a&gt; explains why, and it seems reasonable, but I take that with a grain of
+salt since it’s published by the SIP industry and every citation is by the OSB or EPS industry &lt;code class=&quot;highlighter-rouge&quot;&gt;¯\_(ツ)_/¯&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Construction cost&lt;/strong&gt;: The prevailing wisdom seems to be that SIPs cost more up front (material costs) but less in the long run 
+(energy efficiency) than traditional stick framing. However in my case I’ve found the initial cost of SIPs looks about the same as traditional 
+stick framing.  I’ll be paying $7.39 per square foot for my SIP shell. &lt;a href=&quot;https://docs.google.com/document/d/1kUC6ypYYON4-OPG9Jlb7ofMPGBbTxVwAn5nbXeAeQTc/edit?usp=sharing&quot;&gt;I estimate&lt;/a&gt; 
+of the cost of a stick frame at $7.12 per square foot. The price difference is just 4%, and my estimate is rough and (I think) probably under, 
+so I’m gonna call it the same – which is a nice surprise.&lt;/p&gt;
+
+    &lt;p&gt;There are many variables that can affect the up front price, so it’s hard to draw any conclusions based my individual experience. 
+One reason I ended up going with Panelwrights is because another SIP supplier quoted me a much higher price. If I had no choice but that supplier, stick framing would be much cheaper. 
+I also could have reduced my SIP cost significantly if I was willing to wait another month so they could piggyback my order on a larger shipment.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Details are exposed early&lt;/strong&gt;: This is one I didn’t anticipate. Because you need to specify your complete structure, window penetrations, and wire chase
+locations to the SIP supplier to place your order, you must make a LOT of decisions before anything happens in the physical world. 
+In the traditional stick frame approach, interior stud bays can be left open until relatively late in the construction process. 
+This leaves you flexibility to adjust to unanticipated realities, so some decisions can be left until later.&lt;/p&gt;
+
+    &lt;p&gt;Take electrical for example: if, after you’ve fully framed and weather sealed your house, you realize 
+you really want the bedroom where the kitchen is, no problem. You update your electrical plan and run wires wherever your heart desires so long as you
+haven’t closed up the stud bays.&lt;/p&gt;
+
+    &lt;p&gt;With SIPs, wire chases must be created during the manufacturing process. Manually adding them after the fact, while doable, is an unholy pain. And every
+additional penetration in the SIP reduces its strength and insulating power. So to order the SIPs you must specify the exact wire chase locations.
+To specify the wire chase locations you must finalize your electrical plan. To finalize your electrical plan you must know your interior layout (partition
+walls, cabinetry locations and exact dimensions, etc.) and the exact power draw of your lights, appliances, and outlets. Will you use an electric or
+propane hot water heater? Propane? Ok, does it still require electric power, and if so, how much? To answer that you need to decided on a specific heater model.
+What does that model’s installation manual say about how much space is required to either side of the heat exhaust vent. Did someone say propane? 
+Where exactly are you going to run the propane lines? On and on forever until you die.&lt;/p&gt;
+
+    &lt;p&gt;I’m sure it’s best practice to make all these decisions before you start building regardless of whether you go with SIPs or stick framing. But I know 
+I would have caved to the temptation to start building weeks ago had I not been forced to begin at the root of the decision tree to
+place my SIP order.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- TODO: Currently this can only be included once per post --&gt;
+&lt;div class=&quot;videoWrapper&quot;&gt;
+    &lt;div id=&quot;vid&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--  Uses Youtube iframe API to set playback quality to HD: 
+      https://developers.google.com/youtube/iframe_api_reference --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    // loads the IFrame Player API code asynchronously
+    var tag = document.createElement('script');
+    tag.src = &quot;https://www.youtube.com/iframe_api&quot;;
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // create JS youtube player and insert iframe into DOM
+    var player;
+    function onYouTubeIframeAPIReady() {    
+
+      player = new YT.Player('vid', {
+        videoId: 'oAWDKr8c2ug', 
+        playerVars: {
+          rel: 0, 
+        },
+        events: {
+          'onReady': onPlayerReady
+        },
+      });
+    }
+
+    // Set quality to HD
+    function onPlayerReady(event) { 
+        player.setPlaybackQuality('hd720');
+    }
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Planning the electrical wire runs&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sip-gotchas&quot;&gt;SIP gotchas&lt;/h2&gt;
+
+&lt;p&gt;There are some things to watch out for with SIPs.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;OSB and Water&lt;/strong&gt;: Compared with other materials like plywood, OSB degrades relatively quickly when wet.
+Keep SIPs dry, and make it possible for them dry out when they inevitably get wet.
+During construction that means keeping them off the ground and covered. Over the lifetime of the 
+building that means building in an air gap between the SIPs and exterior cladding 
+(a &lt;a href=&quot;https://en.wikipedia.org/wiki/Rainscreen&quot;&gt;rainscreen&lt;/a&gt;) which allows any water to drain out and
+air to flow through to keep them nice and dry.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ventilation&lt;/strong&gt;: The extreme airtightness of a SIP structure, which is so good for preventing heat
+transfer between inside and outside, means unwanted interior pollutants and humidity in the air 
+won’t passively dissipate (assuming the SIP structure will spend some time in climates where you aren’t
+happy to simply open the windows). 
+Furthermore the EPS foam at the SIPs’ core is “closed-cell” and vapor 
+impermeable, meaning humidity will not diffuse through the walls. Left unmitigated, this would mean 
+mold, water damage from condensation, and probably other bad things.&lt;/p&gt;
+
+    &lt;p&gt;SIP structures need mechanical ventilation to guarantee good air quality in all climates. 
+Exhaust fans in the bathroom and kitchen  remove excess moisture (like shower steam) 
+and pollutants (like cooking smoke). An intake vent must be installed for fresh air to replace the outflow, 
+otherwise the exhaust fans will create a vacuum and your head will explode. Not really, but ventilation
+won’t go well.&lt;/p&gt;
+
+    &lt;p&gt;What about when the air outside is humid (Baltimore summer)? An intake vent will bring
+in that humidity. Yup. I’ll be installing a ductless mini split which, in addition
+to efficient heating and cooling, has a dehumidification function to keep the interior climate 👌.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-sip-ordering-process&quot;&gt;The SIP ordering process&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blubox.house/assets/img/panel_group_b.png&quot; alt=&quot;SIP shop drawings&quot; /&gt;
+&lt;em&gt;SIP shop drawings specify exactly what panels will make up your structure
+ and how they’ll be assembled&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I didn’t find many resources online describing the process of ordering SIPs for a small 
+personal project like this, so here is how my experience went:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Contact a SIP panel supplier (Panelwrights in my case) for a quote. I sent them:
+    &lt;ul&gt;
+      &lt;li&gt;Thickness specification: SIPs come in a variety of thicknesses. Because tiny houses have obvious
+ size constraints I requested the thinnest panels (4.5”) to maximize interior space.&lt;/li&gt;
+      &lt;li&gt;The design: I sent screenshots and a CAD model (.skp file) of my early design draft. Earlier is better
+ as the SIP supplier can recommend changes to make your design more compatible with SIPs.
+ I submitted my model as if every face of my
+ house (walls, roof, floor) would be an unbroken 4.5” thick panel (in reality each face will
+ likely be comprised of multiple contiguous panels). The SIP supplier will figure out the most efficient way to 
+ form your building shell.&lt;/li&gt;
+      &lt;li&gt;Questions: As a total newbie, I had a number of structural design 
+ questions that I wanted answered by a professional at the start. For example, my design has an 
+ unsupported overhang of about 1’ over the trailer’s tongue. I needed to know if the strength
+ of the walls is sufficient to carry that overhang. They were able to answer this and many other 
+ questions and put my mind at ease.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The SIP supplier gives you a quote specifying what materials and services will be delivered
+and how much they’ll cost.&lt;/li&gt;
+  &lt;li&gt;Sign the quote and pay the deposit (15%).&lt;/li&gt;
+  &lt;li&gt;The supplier will converts your designs into a SIP shop drawing: blueprints of how your panels should be
+assembled. &lt;a href=&quot;http://blubox.house/assets/img/SIP_drawings.pdf&quot;&gt;HERE&lt;/a&gt; are mine. It took panelwrights
+1 week to produce my shop drawings.&lt;/li&gt;
+  &lt;li&gt;Review, propose any changes to, and finally approve the shop drawings. I waited until just before approval
+to submit the location of my wire chases as I was still working on my electrical plan. Upon
+approval I paid a further 75%.&lt;/li&gt;
+  &lt;li&gt;The supplier will manufacture and deliver the panels. In my case this will take between 2 and 3 weeks.
+The final 10% is paid.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">I’ll be using Structural Insulated Panels (SIPs) rather than traditional 2x4 framing.</summary></entry><entry><title type="html">Intro</title><link href="http://blubox.house/update/2017/06/06/intro.html" rel="alternate" type="text/html" title="Intro" /><published>2017-06-06T12:00:00-04:00</published><updated>2017-06-06T12:00:00-04:00</updated><id>http://blubox.house/update/2017/06/06/intro</id><content type="html" xml:base="http://blubox.house/update/2017/06/06/intro.html">&lt;p&gt;I’m building a tiny house on an 18-foot trailer at my parents’ place in Baltimore.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -115,7 +443,7 @@ bbx.init = function(params) {
     loader.load(params.model_path, function (collada) {
         bbx.model = collada.scene;
         bbx.model.scale.set( params.scale, params.scale, params.scale );
-        bbx.model.position.set( 0, 0, 0 );
+        bbx.model.position.set( 0, -3, 0 );
 
         // Shadows require turning on shadows for all child meshes in the group
         bbx.model.traverse(function ( child ) {
@@ -127,6 +455,7 @@ bbx.init = function(params) {
     });
 
     var gridHelper = new THREE.GridHelper( 10, 10 );
+    gridHelper.position.set( 0, -3, 0 );
     bbx.scene.add( gridHelper );
 
     // LIGHTS
@@ -188,4 +517,4 @@ console.log('params', params)
 bbx.init(params);
 bbx.animate();
 
-&lt;/script&gt;</content><author><name></name></author><summary type="html">I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.</summary></entry></feed>
+&lt;/script&gt;</content><author><name></name></author><summary type="html">I’m building a tiny house on an 18-foot trailer at my parents’ place in Baltimore.</summary></entry></feed>

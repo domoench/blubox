@@ -5,7 +5,7 @@ date:   2017-06-06 12:00:00 -0400
 categories: update
 ---
 
-I'm building a tiny house on an 18-foot trailer at my parent's place in Baltimore.
+I'm building a tiny house on an 18-foot trailer at my parents' place in Baltimore.
 
 <!--more-->
 

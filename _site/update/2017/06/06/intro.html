@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Intro</title>
-  <meta name="description" content="I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.">
+  <meta name="description" content="I’m building a tiny house on an 18-foot trailer at my parents’ place in Baltimore.">
 
   
   
@@ -56,7 +56,7 @@
   </div>
 
   <div class="prose post-content" itemprop="articleBody">
-      <p>I’m building a tiny house on an 18-foot trailer at my parent’s place in Baltimore.</p>
+      <p>I’m building a tiny house on an 18-foot trailer at my parents’ place in Baltimore.</p>
 
 <!--more-->
 
@@ -172,7 +172,7 @@ bbx.init = function(params) {
     loader.load(params.model_path, function (collada) {
         bbx.model = collada.scene;
         bbx.model.scale.set( params.scale, params.scale, params.scale );
-        bbx.model.position.set( 0, 0, 0 );
+        bbx.model.position.set( 0, -3, 0 );
 
         // Shadows require turning on shadows for all child meshes in the group
         bbx.model.traverse(function ( child ) {
@@ -184,6 +184,7 @@ bbx.init = function(params) {
     });
 
     var gridHelper = new THREE.GridHelper( 10, 10 );
+    gridHelper.position.set( 0, -3, 0 );
     bbx.scene.add( gridHelper );
 
     // LIGHTS
@@ -258,6 +259,14 @@ bbx.animate();
 
 
   
+  <div class="col-4 sm-width-full left mt-3">
+    <a class="no-underline border-top-thin py-1 block" href="http://blubox.house/update/2017/07/07/sips.html">
+      <span class="h5 bold text-accent">Next</span>
+      <p class="bold h3 link-primary mb-1">SIP Framing</p>
+      <p>I'll be using [Structural Insulated Panels (SIPs)](http://www.sips.org/about/frequently-asked-questions-faqs-regarding-structural-insulated-panels-sips) rather than traditional 2x4 framing. SIPs are made of a foam core sandwiched...</p>
+    </a>
+  </div>
+
 
 </div>
 

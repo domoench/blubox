@@ -49,7 +49,7 @@ bbx.init = function(params) {
     loader.load(params.model_path, function (collada) {
         bbx.model = collada.scene;
         bbx.model.scale.set( params.scale, params.scale, params.scale );
-        bbx.model.position.set( 0, 0, 0 );
+        bbx.model.position.set( 0, -3, 0 );
 
         // Shadows require turning on shadows for all child meshes in the group
         bbx.model.traverse(function ( child ) {
@@ -61,6 +61,7 @@ bbx.init = function(params) {
     });
 
     var gridHelper = new THREE.GridHelper( 10, 10 );
+    gridHelper.position.set( 0, -3, 0 );
     bbx.scene.add( gridHelper );
 
     // LIGHTS
