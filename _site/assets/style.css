@@ -82,9 +82,9 @@ code {
 
 .post-content a, .page-content a {
   color: #407ed2; }
-.post-content em, .page-content em {
-  opacity: 0.5;
-  font-size: 14px; }
+.post-content em.caption, .page-content em.caption {
+  opacity: 0.6;
+  font-size: 15px; }
 
 .footer li {
   display: inline;

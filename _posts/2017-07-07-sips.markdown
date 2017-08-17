@@ -16,7 +16,7 @@ SIPs are made of a foam core sandwiched between two thin skins of oriented stran
 Here's an interactive model of how my SIP shell will look:
 
 {% include 3d-model.html scale="0.047" shadows="false" model_path="/assets/models/SIP_shell_v10.5.dae" %}
-*CONTROLS: mouse drag to orbit. ] and [ keys to zoom in and out.*
+{% include caption.html text="CONTROLS: mouse drag to orbit. ] and [ keys to zoom in and out." %}
 
 ## The benefits of SIPs
 
@@ -82,8 +82,7 @@ Here's an interactive model of how my SIP shell will look:
   place my SIP order.
 
 {% include youtube-embed.html vid-id="oAWDKr8c2ug" %}
-*Planning the electrical wire runs*
-
+{% include caption.html text="Planning the electrical wire runs" %}
 
 ## SIP gotchas
 
@@ -117,8 +116,7 @@ There are some things to watch out for with SIPs.
 ## The SIP ordering process 
 
 ![SIP shop drawings]({{ site.url }}/assets/img/panel_group_b.png)
-*SIP shop drawings specify exactly what panels will make up your structure
- and how they'll be assembled* 
+{% include caption.html text="SIP shop drawings specify exactly what panels will make up your structure and how they'll be assembled" %}
 
 I didn't find many resources online describing the process of ordering SIPs for a small 
 personal project like this, so here is how my experience went:

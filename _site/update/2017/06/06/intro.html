@@ -65,7 +65,9 @@
 <p>Spending time with my family is another motivation. I haven’t lived close to my parents or my sister’s family for some time, and don’t know when I’ll get the chance again, so these next months will be a really special chance to keep our lives connected.</p>
 
 <p><img src="https://farm5.staticflickr.com/4274/34069241804_c6c40c19fc_h.jpg" alt="The build site" />
-<em>The build site: the overgrown section of my parents’ backyard</em></p>
+<em class="caption">
+  The build site: the overgrown section of my parents’ backyard
+</em></p>
 
 <!-- TODO: Currently this can only be included once per post -->
 <div class="videoWrapper">
@@ -103,7 +105,9 @@
 
 </script>
 
-<p><em>Clearing the build site and chipping the wood to stop weed growth</em></p>
+<p><em class="caption">
+  Clearing the build site and chipping the wood to stop weed growth
+</em></p>
 
 <p>There’s also some raw opportunistic convenience to it. My saintly parents have offered their backyard, basement wood shop, and dad’s encyclopedic knowledge of power tools and sustainable building practices. In return, I’m washing more dishes than I did when I was a kid.</p>
 
@@ -114,140 +118,11 @@
 <p>Now I’m at the point of no return. Most of the high-level research, design, and planning is done. I even have my trailer. It’s time to pull the trigger and order my SIP panels (more on those later) and other expensive raw materials and begin the build.</p>
 
 <p><img src="https://farm5.staticflickr.com/4223/34871652736_26a05c8e47_h.jpg" alt="Brand new trailer" />
-<em>The brand new trailer</em></p>
+<em class="caption">
+  The brand new trailer
+</em></p>
 
 <p>Honestly, I’m quite intimidated and have often thought it would be wise to forget the whole thing. But, I’ve already put up this blog post so I guess I’ll just keep going!</p>
-
-<script type="text/javascript" src="/assets/js/three.js"></script>
-
-<script type="text/javascript" src="/assets/js/ColladaLoader.js"></script>
-
-<script type="text/javascript" src="/assets/js/Detector.js"></script>
-
-<script type="text/javascript" src="/assets/js/OrbitControls.js"></script>
-
-<div id="container"></div>
-
-<script>
-
-if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
-var bbx = {};
-
-bbx.init = function(params) {
-    // DOM
-    bbx.container = document.getElementById( 'container' );
-    bbx.w = bbx.container.clientWidth;
-    bbx.h = bbx.w * 0.75;
-
-    // Validate configuration parameters 
-    params.shadows = params.shadows || false;
-    params.scale = params.scale || 0.025;
-    params.model_path = params.model_path || 'bad model path!';
-
-    // SCENE, RENDERER, CAMERA, CONTROLS, LISTENERS
-    bbx.scene = new THREE.Scene();
-
-    bbx.renderer = new THREE.WebGLRenderer();
-    bbx.renderer.setPixelRatio( window.devicePixelRatio );
-    bbx.renderer.setSize( bbx.w, bbx.h );
-    bbx.container.appendChild( bbx.renderer.domElement );
-
-    if (params.shadows) {
-        bbx.renderer.shadowMap.enabled = true;
-        bbx.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    }
-
-    bbx.camera = new THREE.PerspectiveCamera( 75, bbx.w / bbx.h, 1, 10000 );
-    bbx.camera.position.z = 10;
-    bbx.camera.position.y = 10;
-
-    controls = new THREE.OrbitControls( bbx.camera, bbx.renderer.domElement );
-    window.addEventListener( 'resize', bbx.onWindowResize, false );
-
-    // MODEL
-    // Load it from a collada file
-    var loader = new THREE.ColladaLoader();
-    loader.options.convertUpAxis = true;
-    loader.load(params.model_path, function (collada) {
-        bbx.model = collada.scene;
-        bbx.model.scale.set( params.scale, params.scale, params.scale );
-        bbx.model.position.set( 0, -3, 0 );
-
-        // Shadows require turning on shadows for all child meshes in the group
-        bbx.model.traverse(function ( child ) {
-            child.castShadow = true;
-            child.receiveShadow = true;
-        });
-
-        bbx.scene.add( bbx.model );
-    });
-
-    var gridHelper = new THREE.GridHelper( 10, 10 );
-    gridHelper.position.set( 0, -3, 0 );
-    bbx.scene.add( gridHelper );
-
-    // LIGHTS
-    // Point light seems to have the nicest shadows
-    var pLight = new THREE.PointLight( 0xFFB578, 0.7, 30 );
-    pLight.position.set(10, 10, 5);
-    if (params.shadows) {
-        pLight.castShadow = true;
-        // Getting rid of nasty shadow aliasing requires a higher res shadow map, and bias
-        pLight.shadow.mapSize.x = 1024;
-        pLight.shadow.mapSize.y = 1024;
-        pLight.shadow.bias = 0.3;
-    }
-    bbx.scene.add( pLight );
-    // var pLHelper = new THREE.PointLightHelper( pLight, 1 );
-    // bbx.scene.add( pLHelper );
-
-    var dLight = new THREE.DirectionalLight( 0xBBD8F7, 0.9 ); // bluish
-    dLight.position.set( -10, 10, 4 )
-    bbx.scene.add( dLight );
-    // var dLHelper = new THREE.DirectionalLightHelper( dLight, 5 );
-    // bbx.scene.add( dLHelper );
-    
-    var aLight = new THREE.AmbientLight( 0x606060 ); // soft white light
-    bbx.scene.add( aLight );
-}
-
-bbx.animate = function() {
-    requestAnimationFrame( bbx.animate );
-    if (bbx.model) {
-        bbx.model.rotation.y += 0.001;
-    }
-    bbx.renderer.render( bbx.scene, bbx.camera );
-}
-
-bbx.onWindowResize = function() {
-    bbx.container = document.getElementById( 'container' );
-    bbx.w = bbx.container.clientWidth;
-    bbx.h = bbx.w * 0.75;
-    bbx.camera.aspect = bbx.w / bbx.h;
-    bbx.camera.updateProjectionMatrix();
-    bbx.renderer.setSize( bbx.w, bbx.h );
-}
-
-this.bbx = bbx;
-
-</script>
-
-<script>
-
-var params = {
-    shadows: 'false' == 'true',
-    scale: parseFloat('0.025'),
-    model_path: '/assets/models/SIP_shell_v10.3.dae',
-}
-
-console.log('params', params)
-
-bbx.init(params);
-bbx.animate();
-
-</script>
-
 
   </div>
 
@@ -263,7 +138,9 @@ bbx.animate();
     <a class="no-underline border-top-thin py-1 block" href="http://blubox.house/update/2017/07/07/sips.html">
       <span class="h5 bold text-accent">Next</span>
       <p class="bold h3 link-primary mb-1">SIP Framing</p>
-      <p>I'll be using [Structural Insulated Panels (SIPs)](http://www.sips.org/about/frequently-asked-questions-faqs-regarding-structural-insulated-panels-sips) rather than traditional 2x4 framing. SIPs are made of a foam core sandwiched...</p>
+      <p>I’ll be using Structural Insulated Panels (SIPs) rather than traditional 2x4 framing.
+
+</p>
     </a>
   </div>
 

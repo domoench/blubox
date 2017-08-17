@@ -20,9 +20,9 @@ code {
   a {
       color: #407ed2;
   }
-  em {
-    opacity: 0.5;
-    font-size: $prose-font-size * 0.7;
+  em.caption {
+    opacity: 0.6;
+    font-size: $prose-font-size * 0.75;
   }
 }
 
