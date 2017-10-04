@@ -1,0 +1,16 @@
+{% include setup-threejs.html %}
+
+<script>
+
+var params = {
+    shadows: '{{ include.shadows }}' == 'true',
+    scale: parseFloat('{{ include.scale }}'),
+    model_path: '{{ include.model_path | prepend: full_base_url }}',
+}
+
+console.log('params', params)
+
+bbx.init(params);
+bbx.animate();
+
+</script>

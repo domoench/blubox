@@ -1,0 +1,111 @@
+<script type="text/javascript" src="{{ "/assets/js/three.js" | prepend: full_base_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/ColladaLoader.js" | prepend: full_base_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/Detector.js" | prepend: full_base_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/OrbitControls.js" | prepend: full_base_url }}"></script>
+
+<div id="container"></div>
+
+<script>
+
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+var bbx = {};
+
+bbx.init = function(params) {
+    // DOM
+    bbx.container = document.getElementById( 'container' );
+    bbx.w = bbx.container.clientWidth;
+    bbx.h = bbx.w * 0.75;
+
+    // Validate configuration parameters 
+    params.shadows = params.shadows || false;
+    params.scale = params.scale || 0.025;
+    params.model_path = params.model_path || 'bad model path!';
+
+    // SCENE, RENDERER, CAMERA, CONTROLS, LISTENERS
+    bbx.scene = new THREE.Scene();
+
+    bbx.renderer = new THREE.WebGLRenderer();
+    bbx.renderer.setPixelRatio( window.devicePixelRatio );
+    bbx.renderer.setSize( bbx.w, bbx.h );
+    bbx.container.appendChild( bbx.renderer.domElement );
+
+    if (params.shadows) {
+        bbx.renderer.shadowMap.enabled = true;
+        bbx.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    }
+
+    bbx.camera = new THREE.PerspectiveCamera( 75, bbx.w / bbx.h, 1, 10000 );
+    bbx.camera.position.z = 10;
+    bbx.camera.position.y = 10;
+
+    controls = new THREE.OrbitControls( bbx.camera, bbx.renderer.domElement );
+    window.addEventListener( 'resize', bbx.onWindowResize, false );
+
+    // MODEL
+    // Load it from a collada file
+    var loader = new THREE.ColladaLoader();
+    loader.options.convertUpAxis = true;
+    loader.load(params.model_path, function (collada) {
+        bbx.model = collada.scene;
+        bbx.model.scale.set( params.scale, params.scale, params.scale );
+        bbx.model.position.set( 0, -3, 0 );
+
+        // Shadows require turning on shadows for all child meshes in the group
+        bbx.model.traverse(function ( child ) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+        });
+
+        bbx.scene.add( bbx.model );
+    });
+
+    var gridHelper = new THREE.GridHelper( 10, 10 );
+    gridHelper.position.set( 0, -3, 0 );
+    bbx.scene.add( gridHelper );
+
+    // LIGHTS
+    // Point light seems to have the nicest shadows
+    var pLight = new THREE.PointLight( 0xFFB578, 0.7, 30 );
+    pLight.position.set(10, 10, 5);
+    if (params.shadows) {
+        pLight.castShadow = true;
+        // Getting rid of nasty shadow aliasing requires a higher res shadow map, and bias
+        pLight.shadow.mapSize.x = 1024;
+        pLight.shadow.mapSize.y = 1024;
+        pLight.shadow.bias = 0.3;
+    }
+    bbx.scene.add( pLight );
+    // var pLHelper = new THREE.PointLightHelper( pLight, 1 );
+    // bbx.scene.add( pLHelper );
+
+    var dLight = new THREE.DirectionalLight( 0xBBD8F7, 0.9 ); // bluish
+    dLight.position.set( -10, 10, 4 )
+    bbx.scene.add( dLight );
+    // var dLHelper = new THREE.DirectionalLightHelper( dLight, 5 );
+    // bbx.scene.add( dLHelper );
+    
+    var aLight = new THREE.AmbientLight( 0x606060 ); // soft white light
+    bbx.scene.add( aLight );
+}
+
+bbx.animate = function() {
+    requestAnimationFrame( bbx.animate );
+    if (bbx.model) {
+        bbx.model.rotation.y += 0.001;
+    }
+    bbx.renderer.render( bbx.scene, bbx.camera );
+}
+
+bbx.onWindowResize = function() {
+    bbx.container = document.getElementById( 'container' );
+    bbx.w = bbx.container.clientWidth;
+    bbx.h = bbx.w * 0.75;
+    bbx.camera.aspect = bbx.w / bbx.h;
+    bbx.camera.updateProjectionMatrix();
+    bbx.renderer.setSize( bbx.w, bbx.h );
+}
+
+this.bbx = bbx;
+
+</script>
