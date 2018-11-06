@@ -13,15 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: blubox 
-email: blubox.th@gmail.com 
+title: blubox
+email: blubox.th@gmail.com
 excerpt_separator: <!--more-->
 
 description: > # this means to ignore newlines until "baseurl:"
-   a tiny house blog. 
+   a tiny house blog.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blubox.house" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://vigilant-sammet-664371.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 social_link: instagram
 social_username: blubox.th
