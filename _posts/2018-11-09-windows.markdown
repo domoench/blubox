@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "Windows + Door"
+date:   2018-11-09 12:00:00 -0400
+categories: update
+---
+
+Choosing what windows to buy is much more difficult than actually installing them.
+
+<!--more-->
+
+{% include youtube-light-embed.html%}
+
+## Making Choices: Brand, Material, Price Tier
+
+The number of options for doors and windows is overwhelming. There are many brands (Pella, Silver Line, JeldWen, etc.) and within each brand there are many different materials to choose from (wood, vinyl, aluminum, fiberglass), and within each material for a given brand there are many price tiers.
+
+Faced with such a huge number of options, I decided to go with the cheapest and most easily available option that met my standards. Those standards were:
+1. Good thermal performance for energy efficient heating and cooling: Must have a U-Factor <= 0.30.
+1. Vinyl Frames
+1. Aesthetically simple + clean
+
+I measured energy efficiency using the [NFRC's full unit U-factor rating](http://www.nfrc.org/energy-performance-label/) - which measures how quickly heat can move through the unit. Lower numbers are better: meaning the window is better at preventing heat transfer. [This article](http://www.startribune.com/window-replacement-part-1-the-dog-and-pony-show-comes-to-your-house/235714221/) recommends a U-factor of 0.30 for minnesota, so I figured that would be a good enough for this tiny house as I doubt it will ever end up somewhere colder than minnesota.
+
+I decided on Vinyl (over wood, aluminum, fiberglass) as my frame material because it requires less maintenance than wood, and was the cheapest option to meet my thermal performance needs.
+
+I had access to suppliers of Pella, Silver Line, and JeldWen windows locally. Pella through a local showroom. Silver Line and JeldWen through the building supply store 84 Lumber. I read some comments online that the windows sold at big box stores like Home Depot and Lowes are of lower quality that what you can buy directly. I have no idea if that's actually true (I kindof doubt it is), but I didn't look into buying from either of those stores.
+
+I researched the performance stats of [Pella Encompass](http://professional.pella.com/windows#vinyl), [Silverline V3](https://www.silverlinewindows.com/v3-series/), and [United](https://www.unitedwindowmfg.com/professional-resources/test-results/) windows and found they all had U-factors of under 0.3, with Pella slightly lower than the other brands. Pella also had better [DP Rating](https://www.4feldco.com/articles/design-pressure-ratings/) and [Air Leakage](https://www.efficientwindows.org/al.php) stats. Furthermore I had a great experience with the people at the Pella (they were very informative, and not pushy) and a terrible experience at 84 Lumber (I had to bug them for weeks to get a quote, and finally it did not include what I asked for). So I went with the Pella Encompass New Construction Nail-Fin windows.
+
+I did consider the higher tier Pella windows, but decided that the performance and aesthetic differences weren't worth the extra cost.
+
+The only problems I've had with the Pella windows to date was with their screens. Some of them came with their release pins fused in place so I could not remove them without damaging the screens. However, Pella replaced those screens immediately when I let them know about the problem.
+
+## Window Installation
+
+Installation was quite straightforward. The only thing I did that was not exactly as described in Pella's installation instructions was to add a sloped piece of wood on the bottom of the rough opening, to ensure that should any water penetrate into the interior it will drain outwards. I got that idea from the Tiny Nest vid series.
+
+[Here's a video of my installation process](https://youtu.be/apaBAM7WsOE):
+
+<div class="youtube-player" data-id="apaBAM7WsOE"></div>
+
+## Door Installation
+
+I bought my door from Pella as well. I opted for a fiberglass frame and a "Full Lite" style, trading some thermal performance for better light. However despite the trade-off the U-factor is still 0.3.
+
+The only issue I encountered while installing the door was that my rough opening sill plate was not level relative to the floor. This was because the trailer's wheel well was not level relative to its platform. I planed / chiseled the sill plate until it was level.
+
+[Here's a video of the door installation](https://youtu.be/98Z1_3uh5Bw):
+
+<div class="youtube-player" data-id="98Z1_3uh5Bw"></div>

@@ -3,7 +3,7 @@
     <div id="vid"></div>
 </div>
 
-<!--  Uses Youtube iframe API to set playback quality to HD: 
+<!--  Uses Youtube iframe API to set playback quality to HD:
       https://developers.google.com/youtube/iframe_api_reference -->
 <script type="text/javascript">
     // loads the IFrame Player API code asynchronously
@@ -14,12 +14,12 @@
 
     // create JS youtube player and insert iframe into DOM
     var player;
-    function onYouTubeIframeAPIReady() {    
+    function onYouTubeIframeAPIReady() {
 
       player = new YT.Player('vid', {
-        videoId: '{{ include.vid-id }}', 
+        videoId: '{{ include.vid-id }}',
         playerVars: {
-          rel: 0, 
+          rel: 0,
         },
         events: {
           'onReady': onPlayerReady
@@ -28,7 +28,7 @@
     }
 
     // Set quality to HD
-    function onPlayerReady(event) { 
+    function onPlayerReady(event) {
         player.setPlaybackQuality('hd720');
     }
 
