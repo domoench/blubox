@@ -29,7 +29,7 @@ social_username: blubox.th
 # Build settings
 markdown: kramdown
 theme_color: blue
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
