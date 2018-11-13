@@ -54,7 +54,7 @@ The siding will get wet relatively often, so it needs to be able to dry out quic
 
 I used 3/8" thick plastic [CedarVent][cedarvent] furring strips from to create my rainscreen gap. They are corrugated so they still allow water and air to pass through when installed horizontally. I got some with an attached mesh to serve as the top and bottom strips to keep insects out of the gap.
 
-# Cedar siding installation
+# Cedar Siding Installation
 
 I attached the tongue and groove cedar by blind nailing with 2" 16-gauge stainless steel fasteners. I used a 16" O.C. fastening schedule (through each furring strip), plus 3 more spaced in between. I added those extra nails because aren't regular studs in a SIP wall for the fasteners to bite into, only the outer 1/2" OSB skin.
 
