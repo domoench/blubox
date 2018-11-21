@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "Standing Seam Metal Roof"
+date:   2018-11-16 00:00:00 -0400
+categories: update
+---
+
+The roof goes on top.
+
+<!--more-->
+
+{% include youtube-light-embed.html%}
+
+<div class="youtube-player" data-id="W8Du8dGK1xQ"></div>
+
+# Choosing metal
+
+Compared with asphalt shingles, metal has a lot of advantages as a roofing material:
+
+- __Durability__: Metal roofs are much more durable than asphalt shingles, and should last over
+50 years.
+- __Energy Efficiency__: Metal roofs, and their [PVDF resin finish][pvdf],
+absorb a lot less heat from the sun than shingles, so they're more efficient during
+the summer months. You want a roof with high reflectivity (how
+much of the sun's energy gets bounced away instead of absorbed) and high emissivity (how quickly
+thermal energy gets re-radiated back into the sky after it's been absorbed). Both of these characteristics are combined
+into one number called the [Solar Reflective Index][sri]. The range is 0-100, where 100 is better.
+An asphalt roof has an SRI around 25, while the steel system I installed [is rated 45][ab-martin-sri].
+- __Weight__: Metal roofing is lighter than asphalt shingle. Since the house needs to weigh in at under
+10K pounds to stay within the trailer's load rating, any weight saving is a plus.
+- __Green__: Steel panels are 100% recyclable (so they claim), and are good for solar panel installations.
+
+It boils down to upfront installation cost vs. lifetime maintenance costs. Metal costs more up
+front but pays for itself over time by lasting and saving energy.
+
+![Steel panel installation](https://lh3.googleusercontent.com/Kl2v_TFELb1a3sW9JjrQNvX0GwnsBaMFnWJ5WQ9k3Krf2B5v0yzKYTsK0YSrxK2m_2zHTGP4miOxbphaODhGo2qhEC-dqSZbQLhs_H2a8oq313kke7NnZT8pefFMXkEyE5QhpXR2CQ=w1080)
+
+I bought 24 gauge steel [A.B. Martin ABSeam Panels][abseam] because they were locally available,
+had the best SRI ratings among products I looked into, and especially because all their product
+info was available online.
+The panels and installation kit cost $1060.
+
+# Design considerations for longevity
+
+It feels like every detail of planning a roof installation is a slight variation
+on the same theme: keep water out. Life will be bad if water gets in, and stays in, between the roofing material and
+the top of the structure (my SIP panels' OSB). Mold, rot, and ice damage.
+It's the same principle that made the [siding rainscreen gap][rainscreen] necessary, but it's even more
+important here because the roof is more exposed and is low-slope so water doesn't drain as easily.
+
+## Preventing moisture damage
+
+### Air gap
+
+I replicated the siding rainscreen gap under my steel roofing panels. Just as in the rainscreen, the gap
+allows any water that infiltrates the system to drain out while allowing air to move through via the stack
+effect and dry things out quickly.
+
+Some additional benefits of the gap in this situation:
+- __Prevent ice dams__: Ice dams occur in cold weather when heat from inside the house warms the
+bottom layer of snow sitting atop the roof. This layer melts, runs down to a colder area of the roof (usually
+an eave overhang), and refreezes. This process repeats and destructive ice buildups form. They're a big problem when
+you have shingles, extended eave overhangs, or gutters. My design has none of those but I felt it's probably safest
+to guard against the problem.
+- __Safety valve for water vapor__: If my SIP assembly wasn't perfect (quite possible), some amount of warm, relatively-humid
+air from inside will escape out between through the roof panels. If it's cold outside, moisture from this air could
+condense under the roofing panels. The air gap provides ventilation to keep things dry.
+- __Less heat absorption during summer__: The air gap prevents direct transfer of heat from the sun into the house
+via conduction. This means less stress on the SIP OSB, and lower cooling bills in the summer.
+
+#### Peak and eave details
+
+Here are diagrams of how the roof panels and trim all interface to allow air into the gap while keeping
+water out.
+
+![Roofing details: peak and eave]({{ site.url }}/assets/img/roofing-detail.svg)
+
+### Roof pitch
+
+*Full disclosure*: I installed the roof panels at a slightly lower slope than is recommended by the steel panel
+manufacturer.
+
+There's a balance to strike between maximizing interior space of the structure and maximizing drainage off the roof.
+A completely flat roof would create the most space inside (very important to create a usable loft space within the
+max road-legal height constraint of 13.5') but would
+provide no gravity drainage. Also the longer your roof, and the more valleys it has, the longer it will take
+to shed water, so a steeper slope is necessary to prevent water from rising to the top of the
+panel seams and get inside.
+
+The recommended slope for most standing seam systems (including mine from AB Martin) is 3/12 (3" down for every 12" over).
+I designed my roof at a slope of 2/12 to get an extra 7" of interior head space on the low side in the loft. I decided
+this would not slow drainage enough risk water rising above my panel seems because:
+1. The length of my downhill slope is extremely short compared to a normal roof: 8' 7".
+1. The roof's profile has no valleys where water running down two different slopes collides.
+1. There are no gutters which could get clogged or otherwise impede drainage speed.
+1. There is an air gap as an extra safety mechanism to ensure any water that makes it inside can dry out.
+
+# Installation
+
+Installation took me about 4 days. See [my installation vid][install-vid], or check out
+[the manual][abseam-instructions] for the gory details.
+
+[pvdf]: https://en.wikipedia.org/wiki/Polyvinylidene_fluoride
+[sri]: https://www.facilitiesnet.com/roofing/topic.aspx?id=19903&
+[ab-martin-sri]: https://www.abmartin.net/wp-content/uploads/2014/10/2017_ABSeam_Solar-Reflectivity-Chart.pdf
+[abseam]: https://www.abmartin.net/metal-roofing-panels/abseam
+[abseam-instructions]: https://www.abmartin.net/wp-content/uploads/2018/08/ABSeam-Instructions_2018-Revision_web.pdf
+[install-vid]: https://youtu.be/W8Du8dGK1xQ
+[rainscreen]: {{ site.baseurl }}{% link _posts/2018-11-12-cedar-siding.markdown %}#whats-a-rainscreen-gap

@@ -46,6 +46,9 @@ Here's a side-view diagram of rainscreen gap. The top is open to air, but protec
 
 {% include sm-image.html cols="6" alt="rainscreen" src="https://lh3.googleusercontent.com/6O4rXC1QD0blqf8ONiT7Q1tZhRDbP8Wh28dDm5OHXpI78lVp3VMLNHT0Fw-aq6qPJ4mxxgylgyiNBBzrDaxRk6H2B0ZcafaifH1aDAqsTYVPRzoIVXrJpZxQ-xtgKCA49W-ed8X4vA=w1080" %}
 
+<div class="youtube-player" data-id="rVt2RcZT_jA"></div>
+{% include caption.html text="Installing the fascia boards to protect the rainscreen gap" %}
+
 Guarding against moisture damage is a good idea in any situation, but it's especially important for this tiny house.
 I designed the structure with no eaves to maximize the interior space while obeying the size constraint of a road-legal trailer
 (8.5' in most states) and to minimize wind updraft forces on the roof during transport.
@@ -64,11 +67,11 @@ Without this trick you end up with board edges that are not flush with a window,
 There is about 1/16" of wiggle room when seating the tongue into the groove at a joint.
 Adding that wiggle room across a number of boards ahead it's possible to control when the joint lands.
 
-### Install videos
+## Install videos
 
 [Part 1][part-1]. [Part 2][part-2]. [Part 3][part-3].
 
-### Interface with windows
+## Interface with windows
 
 I installed my siding around my windows and doors without trim because I like that simple look.
 The siding easily clears the nail fin of all my windows because of my rainscreen gap.
