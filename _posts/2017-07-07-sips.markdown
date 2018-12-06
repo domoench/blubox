@@ -13,7 +13,7 @@ I'll be using [Structural Insulated Panels (SIPs)](http://www.sips.org/about/fre
 
 SIPs are made of a foam core sandwiched between two thin skins of oriented strand board (OSB). This design (a torsion box) makes them strong and great insulators.
 
-![SIP panel](http://www.powerwallgroup.com/PWR5/wp-content/uploads/2016/01/sips1.jpg)
+![SIP panel](https://images.ctfassets.net/rwi5x73ignkx/cSpnnCtyNyQoq2eG4I0Qu/87b555662aea1511dc7d5f037387d6f7/sips1.jpg)
 
 Here's an interactive model of how my SIP shell will look:
 
