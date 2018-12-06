@@ -11,7 +11,7 @@ I clad the exterior of the tiny house with red cedar, stained blue, and installe
 
 {% include youtube-light-embed.html %}
 
-![siding](https://lh3.googleusercontent.com/tBGVJQVFQuVMeQf0waTf3MZJLZWp4fnZTOMQ3UGADpl87Lwml1wgk_x0IsZiDp6BxGozffd7OlA_851WI4f8py3CtTMTcfwUsY1gYiojq9X0GnLe8ye75TqE1OSwQpNIZfftomt1jA=w1080)
+![siding](https://lh3.googleusercontent.com/tBGVJQVFQuVMeQf0waTf3MZJLZWp4fnZTOMQ3UGADpl87Lwml1wgk_x0IsZiDp6BxGozffd7OlA_851WI4f8py3CtTMTcfwUsY1gYiojq9X0GnLe8ye75TqE1OSwQpNIZfftomt1jA=w1170)
 
 # Cedar
 
@@ -44,7 +44,7 @@ There's [a super in-depth article][gba-rainscreen] on rainscreens on the Green B
 
 Here's a side-view diagram of rainscreen gap. The top is open to air, but protected by the small eave to ensure water doesn't flow into the gap.
 
-{% include sm-image.html cols="6" alt="rainscreen" src="https://lh3.googleusercontent.com/6O4rXC1QD0blqf8ONiT7Q1tZhRDbP8Wh28dDm5OHXpI78lVp3VMLNHT0Fw-aq6qPJ4mxxgylgyiNBBzrDaxRk6H2B0ZcafaifH1aDAqsTYVPRzoIVXrJpZxQ-xtgKCA49W-ed8X4vA=w1080" %}
+{% include sm-image.html cols="6" alt="rainscreen" src="https://lh3.googleusercontent.com/6O4rXC1QD0blqf8ONiT7Q1tZhRDbP8Wh28dDm5OHXpI78lVp3VMLNHT0Fw-aq6qPJ4mxxgylgyiNBBzrDaxRk6H2B0ZcafaifH1aDAqsTYVPRzoIVXrJpZxQ-xtgKCA49W-ed8X4vA=w1170" %}
 
 <div class="youtube-player" data-id="rVt2RcZT_jA"></div>
 {% include caption.html text="Installing the fascia boards to protect the rainscreen gap" %}
@@ -78,12 +78,12 @@ The siding easily clears the nail fin of all my windows because of my rainscreen
 I left a 1/8" gap between the edge of my siding boards and the windows,
 which I caulked to prevent rain water from flowing from the outside of the siding into the rainscreen at the windows.
 
-![caulk around window](https://lh3.googleusercontent.com/qYi0l_MWnr4ni_ipiNQP_U3dwU2RUDfYr7ueQqT0QfCxNuWObDZla-TcWCJbwYoXEWgiDEvzExSzVPFI5UWmkxHRNfIlAhTE6kNEtMBxTMsdiiMg-P1h4DpTaB9rEzINuC5ea7zYlQ=w1080)
+![caulk around window](https://lh3.googleusercontent.com/qYi0l_MWnr4ni_ipiNQP_U3dwU2RUDfYr7ueQqT0QfCxNuWObDZla-TcWCJbwYoXEWgiDEvzExSzVPFI5UWmkxHRNfIlAhTE6kNEtMBxTMsdiiMg-P1h4DpTaB9rEzINuC5ea7zYlQ=w1170)
 
 I didn't keep precise track, but the whole process boiled down to about 10 full days of labor: staining, cutting, and installing (and re-cutting + re-installing pieces I messed up).
 I spent $2000 on cedar and $370 on the CedarVent strips to create the rainscreen gap.
 
-![siding in winter](https://lh3.googleusercontent.com/U5GyQRJ6hI1xiv6DIjh3bHpOvJ2lVlY0_6Xzwb_fpwdmkE-eJLTVsIY8YeI4-g0durw7HoDg8amlkmsYtWv28UXBUoKyljvjZiDhZjPRX6G051SBzhDE-UWvPT1qsxtpD7HBa-T5ZA=w1080)
+![siding in winter](https://lh3.googleusercontent.com/U5GyQRJ6hI1xiv6DIjh3bHpOvJ2lVlY0_6Xzwb_fpwdmkE-eJLTVsIY8YeI4-g0durw7HoDg8amlkmsYtWv28UXBUoKyljvjZiDhZjPRX6G051SBzhDE-UWvPT1qsxtpD7HBa-T5ZA=w1170)
 
 [cedar-finishes]: https://www.realcedar.com/outdoor/finishing-choices/
 [behr-solid]: https://www.behr.com/consumer/products/wood-stains-finishes-cleaners-and-strippers/behr-premium-solid-color-waterproofing-stain-and-sealer
