@@ -116,10 +116,10 @@
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.slick-dots
+.prose .slick-dots
 {
     position: absolute;
     bottom: -25px;

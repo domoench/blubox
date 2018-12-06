@@ -115,15 +115,58 @@ Here is how the circuits are organized:
 
 ![Circuits](https://images.ctfassets.net/rwi5x73ignkx/3EVI6YixiUgWAeU4YC6iEo/7daf217f2236a9ffeeb73e0677ca56c2/circuits.jpg?w=1170)
 
+Here are links to the breakers I used:
+[20A AFCI][20a-afci]. [20A GFCI/AFCI][20a-afci-gfci]. [15A AFCI][15a-afci]. [15A Tandem][15a-tandem].
+
 {% include carousel.html
-  img1="https://images.ctfassets.net/rwi5x73ignkx/fEloDX9Xs4WoGoI6GAO4K/d5a748aeb69055cca5b73873dbc8c695/IMG_20180329_202449.jpg"
-  img2="https://images.ctfassets.net/rwi5x73ignkx/5s4v6KVmQo2MIAiS0Aqmy4/b336a0cc814b797b682293035d50b864/IMG_20180329_202435.jpg"
+  img1="https://images.ctfassets.net/rwi5x73ignkx/fEloDX9Xs4WoGoI6GAO4K/d5a748aeb69055cca5b73873dbc8c695/IMG_20180329_202449.jpg?w=1170"
+  img2="https://images.ctfassets.net/rwi5x73ignkx/5s4v6KVmQo2MIAiS0Aqmy4/b336a0cc814b797b682293035d50b864/IMG_20180329_202435.jpg?w=1170"
 %}
+{% include caption.html text="Electrical panel close ups." %}
 
 # Code And Safety
 
+__*Full Disclosure*__: I'm not an electrician, nor has my work been officially inspected for compliance
+with NEC codes. I have done my best to research and follow electrical codes, built in some extra
+safety measures, and had an unofficial inspection of my panel and rough-in by an electrician.
+
+Some misc notes:
+
+- Grounding: In addition to the ground connection back to the main panel through the feeder
+cable, my electrician friend recommended adding a grounding electrode at the tiny house subpanel. I
+ran a 6-gauge wire from the subpanel's ground bar out through the bottom that can be attached to
+a grounding rod when the tiny house comes to its permanent location. The propane system CSST and
+the metal trailer frame are both bonded to the system ground.
+- Wire gauge: I'm using 12-gauge wire everywhere (except some sections of the
+[low voltage LED System][led-section]) (__TODO update <-- link to posts__) even though none of
+the circuits draw more than 15 Amps. Only 14-gauge wire is required by code in that case, but
+thicker wire ⇨ less resistance ⇨ less heat ⇨ more safety in case of unexpected power draw.
+- Ground Fault + Arc Fault protection
+  - [GFCI][gfci]: Ground fault circuit interrupters protect people from electric shock. The sensor expects
+		to see all current moving from hot to neutral. If that is not the case, it means the electricity
+		is taking another return path (such as a person's body -- ouch, or dead), and the GFCI shuts off
+		the circuit. GFCI is required by code in wet areas (bathroom + kitchen). I've installed GFCI outlets
+		in the kitchen, and in the bathroom used a GFCI breaker for protection of the whole circuit.
+  - [AFCI][afci]: Arc fault circuit interrupters are a fire prevention measure. They detect and
+		prevent unwanted electrical paths and the extreme heat produced along those paths. AFCI
+		is required by code to protect all receptacles in dwelling areas.
+
 # LED Lighting
 
+I used [Armacost][armacost] LED lighting. I learned about their products through [shedsistence][shedsistence]
+but it turns out the company is based near me in Baltimore, which is cool. They have plenty of
+documentation about how their systems work, but some things I think are worth mentioning about their
+12V DC system:
+  - Their LED lights run on low voltage 12V DC current. So you need to convert the 120V AC to 12V DC
+		with their power supply bricks.
+  - At low voltages like 12V, voltage drop is a more pronounced issue. I used thick 12-gauge wire for most
+		of the LED wiring, not for safety (there isn't safety code around 12V circuits as the voltage
+    is too low to shock people or cause fires) but to cut down on resistance therefor voltage drop.
+  - If 12V DC wiring and 120V AC wiring run in parallel, the cycling of the AC current can induce
+		flickering in the LED lighting. So you need to layout your wiring such that there is always 6"
+		between your DC and AC wires, and where they must come close they should cross perpendicularly.
+
+![LED lights in kitchen](https://images.ctfassets.net/rwi5x73ignkx/1GcDQ2kQzm2YMucUeIkGsk/7c5ec643540595d3ffdbbcaa7df96d5f/kitchen-leds.jpg?w=1170)
 
 [induction-cooktop]: https://www.amazon.com/True-Induction-MD-2B-Portable-Counter/dp/B019KZXVHE/ref=sr_1_1?s=kitchen&ie=UTF8&qid=1498567253&sr=1-1&keywords=induction+cooktop
 [water-heater]: https://www.eccotemp.com/eccotemp-i12-indoor-3-0-gpm-liquid-propane-tankless-water-heater/
@@ -135,3 +178,12 @@ Here is how the circuits are organized:
 [power-inlet]: https://www.amazon.com/Conntek-80SS2-WTBX-CS6365-Temporary-Generator/dp/B013GGACCU
 [6-3]: https://www.amazon.com/gp/product/B00QJEGJHY
 [panel]: https://www.homedepot.com/p/Square-D-QO-100-Amp-6-Space-12-Circuit-Indoor-Flush-Mount-Main-Lug-Load-Center-with-Cover-Door-QO612L100DF/100209798
+[afci]: https://en.wikipedia.org/wiki/Arc-fault_circuit_interrupter
+[gfci]: https://en.wikipedia.org/wiki/Residual-current_device
+[20a-afci]: https://www.homedepot.com/p/Square-D-QO-20-Amp-Single-Pole-AFCI-Circuit-Breaker-QO120AFIC/100077019
+[20a-afci-gfci]: https://www.homedepot.com/p/Square-D-QO-20-Amp-Single-Pole-Dual-Function-CAFCI-and-GFCI-Circuit-Breaker-QO120DFC/204844647
+[15a-afci]: https://www.homedepot.com/p/Square-D-QO-15-Amp-Single-Pole-Combination-Arc-Fault-Circuit-Breaker-QO115CAFIC/202353327
+[15a-tandem]: https://www.homedepot.com/p/Square-D-QO-2-15-Amp-Single-Pole-Tandem-Circuit-Breaker-QOT1515CP/100076261
+[shedsistence]: https://shedsistence.com/
+[armacost]: http://www.armacostlighting.com/store/
+[led-section]: {{ site.baseurl }}{% link _drafts/2018-11-24-electrical.markdown %}#led-lighting

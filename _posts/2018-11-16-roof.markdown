@@ -77,7 +77,7 @@ water out.
 
 ### Roof pitch
 
-*Full disclosure*: I installed the roof panels at a slightly lower slope than is recommended by the steel panel
+__*Full disclosure*__: I installed the roof panels at a slightly lower slope than is recommended by the steel panel
 manufacturer.
 
 There's a balance to strike between maximizing interior space of the structure and maximizing drainage off the roof.
