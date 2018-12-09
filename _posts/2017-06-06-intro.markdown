@@ -15,9 +15,6 @@ I’m a NYC-based software engineer with limited experience building things. I�
 
 Spending time with my family is another motivation. I haven’t lived close to my parents or my sister’s family for some time, and don’t know when I’ll get the chance again, so these next months will be a really special chance to keep our lives connected.
 
-![The build site](https://farm5.staticflickr.com/4274/34069241804_c6c40c19fc_h.jpg)
-{% include caption.html text="The build site: the overgrown section of my parents' backyard" %}
-
 <div class="youtube-player" data-id="1pMq_NWXvf0"></div>
 {% include caption.html text="Clearing the build site and chipping the wood to stop weed growth" %}
 
