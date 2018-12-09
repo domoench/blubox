@@ -21,7 +21,7 @@ description: > # this means to ignore newlines until "baseurl:"
    a tiny house blog.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://vigilant-sammet-664371.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.blubox.house" # the base hostname & protocol for your site, e.g. http://example.com
 
 social_link: instagram
 social_username: blubox.th
