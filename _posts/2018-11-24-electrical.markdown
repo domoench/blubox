@@ -96,10 +96,10 @@ prefer an electric water heater.
 
 To get more power one will need to connect to a breaker on the main panel.
 
-1. Single pole (120V): It seems 30-Amps is the max 120V hookup one could acheive. I've only seen
+1. Single pole (120V): It seems 30-Amps is the max 120V hookup one could achieve. I've only seen
 dogbone adaptors up to [30-Amps][30a-dogbone].
 1. Double pole (240V): This is to get a lot more power. Connect to a 15, 20, 30, or
-even 50 Amp 2-pole breaker at the main and run an approprately sized cable terminating in a
+even 50 Amp 2-pole breaker at the main and run an appropriately sized cable terminating in a
 [NEMA SS2-50R][nema-ss250r] plug out to the power inlet on the tiny house. `P = IV`, so a 50A 240V
 setup one can deliver 12K watts -- 5 times the wattage of my current 20A 120V setup.
 
