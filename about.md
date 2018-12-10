@@ -16,3 +16,5 @@ Just kidding, it's a blog about building a tiny house.
 I am living with my parents though, but this isn't about that.
 
 Feel free to email any questions or suggestions: {% include email-link.html %}
+
+![Twilight tiny house](https://images.ctfassets.net/rwi5x73ignkx/7fbEpNyadysU8wGWmamAq8/0fde241b2499dd349fe78ffe4f917976/twilight.jpg?w=1170)
