@@ -17,4 +17,4 @@ I am living with my parents though, but this isn't about that.
 
 Feel free to email any questions or suggestions: {% include email-link.html %}
 
-![Twilight tiny house](https://images.ctfassets.net/rwi5x73ignkx/7fbEpNyadysU8wGWmamAq8/0fde241b2499dd349fe78ffe4f917976/twilight.jpg?w=1170)
+![tiny house in the woods](https://images.ctfassets.net/rwi5x73ignkx/FRqCGjKHo2O4mYQCg0ICc/ff4aacf9edb74af2bf52d4570c0434e7/in-the-jungle.jpg?w=1170)
