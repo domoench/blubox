@@ -49,7 +49,6 @@ from the bathroom to the kitchen. In this section I protected the PEX inside PVC
   img3="https://images.ctfassets.net/rwi5x73ignkx/5ykPAQ1UiIYMamyOA2Ka2k/7e239483590946a126adbfd5e839334d/IMG_20181024_112837.jpg?w=1170"
   img4="https://images.ctfassets.net/rwi5x73ignkx/6umuYunG3ScOyUQQsE4mGC/bcac9ef7c15b341187e6a884c6e762e0/IMG_20181010_110738.jpg?w=1170"
 %}
-{% include caption.html text="PEX runs. TODO add better picture of PVC runs" %}
 
 # Greywater drainage
 
@@ -71,8 +70,8 @@ winter).
 I'm using the [eccotemp i-12][eccotemp-i12] tankless propane heater to heat the water in this tiny house. I discuss
 my reasons for choosing a propane system over an electric one [here][electrical-post].
 
-![Propane intake diagram](https://via.placeholder.com/920.png)
-{% include caption.html text="TODO: take a better picture of your propane intake diagram" %}
+![Propane intake diagram](https://images.ctfassets.net/rwi5x73ignkx/Sygc0tvVoGrBbEyRVnSdJ/31fec9590c3d3d6a699632ba23db5720/propane_intake_diagram.jpg?fm=jpg&fl=progressive)
+{% include caption.html text="Propane intake diagram" %}
 
 # Dealing with freezing
 
